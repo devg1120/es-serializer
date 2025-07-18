@@ -6,6 +6,7 @@ export class Serializer
 
   markRecursive(object)
   {
+    //console.log(object.constructor)
     // anoint each object with a type index
     let idx = this.types.findIndex(t => {
       return t.name === object.constructor.name;
@@ -19,6 +20,14 @@ export class Serializer
         if (object.hasOwnProperty(key) && object[key] != null)
           this.markRecursive(object[key]);
       }
+    } else {
+          if (!(object.constructor.name == "String" 
+              || object.constructor.name == "Number"
+              || object.constructor.name == "Date"
+             )) {
+              console.log("*** not regster ClassName :",object.constructor.name);
+              throw new Error(`not regster ClassName : ${object.constructor.name}`);
+	   }
     }
   }
 

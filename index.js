@@ -64,7 +64,8 @@ ESSerializer.registerClasses([MyClass, AdClass, ChildClass]);
 
 console.log("------------------------------ ./esserializer-js2 ");
 import { Serializer}  from './esserializer-js2/Serializer.js';
-let ESSerializer = new Serializer([MyClass, AdClass, ChildClass]);
+//let ESSerializer = new Serializer([MyClass, AdClass, ChildClass]);
+let ESSerializer = new Serializer([MyClass, AdClass ]);
 
 
 //-------------------------------------------------------------
