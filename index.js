@@ -23,8 +23,7 @@ pubsub.subscribe('input:message', args => {
 });
 
 //================================================================
-//import ESSerializer  from './esserializer-ts/dist/index.js';
-import ESSerializer  from './esserializer-js/index.js';
+
 
 class MyClass {
     constructor(foo) {
@@ -50,7 +49,23 @@ class ChildClass {
     setCd(data){this.ad = data;}
 }
 
+/*
+console.log("------------------------------ ./esserializer-ts ");
+import ESSerializer  from './esserializer-ts/dist/index.js';
 ESSerializer.registerClasses([MyClass, AdClass, ChildClass]);
+*/
+
+
+console.log("------------------------------ ./esserializer-js ");
+import ESSerializer  from './esserializer-js/index.js';
+ESSerializer.registerClasses([MyClass, AdClass, ChildClass]);
+
+
+/*
+console.log("------------------------------ ./esserializer-js2 ");
+import { Serializer}  from './esserializer-js2/Serializer.js';
+let ESSerializer = new Serializer([MyClass, AdClass, ChildClass]);
+*/
 
 //-------------------------------------------------------------
 console.log("------------------------------");
