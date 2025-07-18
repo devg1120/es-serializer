@@ -55,17 +55,17 @@ import ESSerializer  from './esserializer-ts/dist/index.js';
 ESSerializer.registerClasses([MyClass, AdClass, ChildClass]);
 */
 
-
+/*
 console.log("------------------------------ ./esserializer-js ");
 import ESSerializer  from './esserializer-js/index.js';
 ESSerializer.registerClasses([MyClass, AdClass, ChildClass]);
+*/
 
 
-/*
 console.log("------------------------------ ./esserializer-js2 ");
 import { Serializer}  from './esserializer-js2/Serializer.js';
 let ESSerializer = new Serializer([MyClass, AdClass, ChildClass]);
-*/
+
 
 //-------------------------------------------------------------
 console.log("------------------------------");
@@ -85,7 +85,7 @@ console.log("ans", ans);
 console.log("date", inst.getDate().toString())
 //-------------------------------------------------------------
 console.log("------------------------------");
-let ad = new AdClass("Ad")
+let ad = new AdClass("Ad+")
 let child = new ChildClass("Child++")
 ad.setChild(child);
 

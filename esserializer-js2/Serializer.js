@@ -28,7 +28,7 @@ export class Serializer
       delete object.typeIndex;
       for (let key in object) {
         if (object.hasOwnProperty(key) && object[key] != null) {
-          console.log(key);
+          //console.log(key);
           this.cleanUp(object[key]);
         }
       }
@@ -64,12 +64,13 @@ export class Serializer
   serialize(object)
   {
     this.markRecursive(object);
-    let copy = JSON.parse(JSON.stringify(object));
+    let json = JSON.stringify(object);
     this.cleanUp(object);
-    return copy;
+    return json;
   }
-  deserialize(copy)
+  deserialize(json)
   {
+    let copy = JSON.parse(json);
     return this.reconstructRecursive(copy);
   }
 }
